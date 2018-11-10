@@ -8,6 +8,8 @@
 #
 
 library(shiny)
+library(plotly)
+
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
@@ -21,6 +23,18 @@ shinyServer(function(input, output) {
     # draw the histogram with the specified number of bins
     hist(x, breaks = bins, col = 'darkgray', border = 'white')
     
+  }, bg="transparent")
+  
+  output$plot <- renderPlotly({
+    # specify some map projection/options
+    g <- list(
+      scope = 'usa',
+      projection = list(type = 'albers usa'),
+      lakecolor = toRGB('white')
+    )
+    plot_ly(z = state.area, text = state.name, locations = state.abb,
+            type = 'choropleth', locationmode = 'USA-states') %>%
+      layout(geo = g)
   })
   output$plott <- renderPlotly({
     # specify some map projection/options
@@ -33,6 +47,7 @@ shinyServer(function(input, output) {
             type = 'choropleth', locationmode = 'USA-states') %>%
       layout(geo = g)
   })
+  
   
   
 })

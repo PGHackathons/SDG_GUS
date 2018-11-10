@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,6 +29,11 @@
     <script src="shared/ionrangeslider/js/ion.rangeSlider.min.js"></script>
     <script src="shared/strftime/strftime-min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+  <script src="htmlwidgets-1.0/htmlwidgets.js"></script>
+  <script src="plotly-binding-4.7.1/plotly.js"></script>
+  
+    
 <script>
 $(document).ready(function(){
   // Add smooth scrolling to all links
@@ -64,19 +70,33 @@ $(document).ready(function(){
         <div class="container" style="padding-top:45vh;">
         <center>
         <h1>WELCOME TO MY STORY</h1><br />
-        <a href="#div_id"><button type="button" class="btn btn-primary">Let's start</button></a>
+        <a href="#first_div"><button type="button" class="btn btn-primary">Let's start</button></a>
         </center>
         </div>
       </div>
-
-      <div id="div_id" class="item active" style="background-color: rgb(247, 247, 239); height: 100vh; background-size: cover;">
-        ..2
-        {{ button }}
-        {{ slider }}
+        
+        <div id="first_div" class="item active" style="background-color: rgb(247, 247, 239); height: 100vh; background-size: cover;">
+        <div class="container"><br /><br />
+          <img src="benin.png" width="100%">
         <center>
-        <span syle="margin-top:70%;" class="glyphicon glyphicon-chevron-down"></span>
+          <a href="#second_div"><button type="button" class="btn btn-primary">To Mexico!</button></a>
         </center>
+        </div>
       </div>
+        
+       <div id="second_div" class="item active" style="background-color: rgb(247, 247, 239); height: 100vh; background-size: cover;">
+         <div class="container"><br /><br />
+         <img src="mexico.png" width="100%">
+          <center>
+          <a href="#third_div"><button type="button" class="btn btn-primary">To Emirates!</button></a>
+        </center>
+        </div>
+ </div>
+      <div id="third_div" class="item active" style="background-color: rgb(247, 247, 239); height: 100vh; background-size: cover;">
+         <div class="container"><br /><br />
+         <img src="emirates.png" width="100%">
+        </div>
+ </div>
 
       <div class="item active" style="background-color: rgb(247, 247, 239); height: 100vh; background-size: cover;">
         ..3
