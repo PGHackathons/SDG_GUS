@@ -71,5 +71,9 @@ mapBubbles(dF=dF2, nameZSize="No.of.Documents",
 install.packages("rworldmap")
 library(rworldmap)
 attach(homicideXpoverty)
-ggplot(homicideXpoverty, aes(x=poverty, y=homicide, size=3)) +
-  geom_point(alpha=0.2)
+homicideXpoverty<-homicideXpoverty[-c(2),]
+homicideXpoverty$JitCoOr <- jitter(as.numeric(factor(poverty)))
+homicideXpoverty$JitCoOrPow <- jitter(as.numeric(factor(homicide)))
+ggplot(homicideXpoverty, aes(x=poverty, y=homicide)) +
+  geom_point(aes( size=population,color = country),alpha=0.2)+
+  geom_text(data=homicideXpoverty,aes(label=country))
