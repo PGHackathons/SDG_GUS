@@ -35,3 +35,14 @@ p <- plot_geo(df, locationmode = 'USA-states') %>%
     geo = g
   )
 p
+world<-map_data("world")
+vic_per_100<-subset(X16_1_1,X16_1_1$SeriesCode=="VC_IHR_PSRC")
+data<-world.cities
+install.packages("ggmap")
+library(ggmap)
+install.packages("maptools")
+library(maptools)
+library(maps)
+visited<-c("Poland", "London", "Senegal")
+ll.visited<-geocode(visited)
+install.packages("googleway")
