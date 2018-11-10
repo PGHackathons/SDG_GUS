@@ -21,7 +21,8 @@ htmlTemplate("index.html",
              hom_button.Poland = actionButton("hom_poland", "Poland"),
              hom_button.Germany = actionButton("hom_germany", "Germany"),
              hom_button.Afghanistan = actionButton("hom_afghanistan", "Afghanistan"),
-             worldMap=plotOutput("worldMap")
+             worldMap=plotOutput("worldMap",click="plot_click"),
+             info = verbatimTextOutput("info")
 )
 
 # Define UI for application that draws a histogram
