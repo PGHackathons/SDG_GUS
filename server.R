@@ -43,9 +43,9 @@ shinyServer(function(input, output) {
       geom_line()+
       geom_point()+
       ylim(0, 100)+
-      ggtitle('Proportion of population with access to electricity')+
       ylab('%')+
       xlab('year')+
-      geom_area(alpha=0.5)
+      geom_area(alpha=0.5, fill='red')+
+      theme(plot.background = element_rect(fill="#F7F7EF"))
   })
 })
