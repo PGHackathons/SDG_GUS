@@ -1,16 +1,7 @@
-
-#
-# This is the server logic of a Shiny web application. You can run the 
-# application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-# 
-#    http://shiny.rstudio.com/
-#
-
 library(shiny)
 library(plotly)
 library(ggplot2)
+library(rworldmap)
 
 # Electricity data reading (for all areas)
 el_data <- read.csv('data/el_data.csv')
@@ -77,5 +68,21 @@ shinyServer(function(input, output) {
       geom_line()+
       geom_point()
   })
+  output$worldMap<-renderPlot({
+    map.world <- map_data(map="world")
+    
+    #Add the data you want to map countries by to map.world
+    #In this example, I add lengths of country names plus some offset
+    map.world$name_len <- nchar(map.world$region) + sample(nrow(map.world))
+    
+    gg <- ggplot()
+    gg <- gg + theme(legend.position="none")
+    gg <- gg + geom_map(data=map.world, map=map.world, aes(map_id=region, x=long, y=lat, fill=name_len))
+    
+    gg <- gg + scale_fill_gradient(low = "green", high = "brown3", guide = "colourbar")
+    gg <- gg + coord_equal()
+    gg
+  })
 })
+
 

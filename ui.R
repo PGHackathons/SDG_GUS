@@ -1,5 +1,4 @@
 
-#
 # This is the user-interface definition of a Shiny web application. You can
 # run the application by clicking 'Run App' above.
 #
@@ -21,7 +20,8 @@ htmlTemplate("index.html",
              hom_plot = plotOutput("homPlot"),
              hom_button.Poland = actionButton("hom_poland", "Poland"),
              hom_button.Germany = actionButton("hom_germany", "Germany"),
-             hom_button.Afghanistan = actionButton("hom_afghanistan", "Afghanistan")
+             hom_button.Afghanistan = actionButton("hom_afghanistan", "Afghanistan"),
+             worldMap=plotOutput("worldMap")
 )
 
 # Define UI for application that draws a histogram
