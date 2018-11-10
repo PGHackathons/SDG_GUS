@@ -36,29 +36,6 @@ shinyServer(function(input, output) {
     rv.el_data$x = el_data[el_data$GeoAreaName == 'Afghanistan',]$TimePeriod
   })
   
-  output$distPlot <- renderPlot({
-    
-    # generate bins based on input$bins from ui.R
-    x    <- faithful[, 2] 
-    bins <- seq(min(x), max(x), length.out = input$bins + 1)
-    
-    # draw the histogram with the specified number of bins
-    hist(x, breaks = bins, col = 'darkgray', border = 'white')
-    
-  }, bg="transparent")
-  
-  output$plot <- renderPlotly({
-    # specify some map projection/options
-    g <- list(
-      scope = 'usa',
-      projection = list(type = 'albers usa'),
-      lakecolor = toRGB('white')
-    )
-    plot_ly(z = state.area, text = state.name, locations = state.abb,
-            type = 'choropleth', locationmode = 'USA-states') %>%
-      layout(geo = g)
-  })
-  
   # Electricity plot
   output$elPlot <- renderPlot({
     temp <- data.frame(x = rv.el_data$x, y = rv.el_data$y)
@@ -68,6 +45,7 @@ shinyServer(function(input, output) {
       ylim(0, 100)+
       ggtitle('Proportion of population with access to electricity')+
       ylab('%')+
-      xlab('year')
+      xlab('year')+
+      geom_area(alpha=0.5)
   })
 })
