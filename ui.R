@@ -15,7 +15,12 @@ htmlTemplate("index.html",
              el_plot = plotOutput("elPlot"),
              el_button.Poland = actionButton("el_poland", "Poland"),
              el_button.Brazil = actionButton("el_brazil", "Brazil"),
-             el_button.Afghanistan = actionButton("el_afghanistan", "Afghanistan")
+             el_button.Afghanistan = actionButton("el_afghanistan", "Afghanistan"),
+             
+             hom_plot = plotOutput("homPlot"),
+             hom_button.Poland = actionButton("hom_poland", "Poland"),
+             hom_button.Germany = actionButton("hom_germany", "Germany"),
+             hom_button.Afghanistan = actionButton("hom_afghanistan", "Afghanistan")
 )
 
 # Define UI for application that draws a histogram
