@@ -13,7 +13,8 @@ htmlTemplate("index.html",
              button = actionButton("action", "Action"),
              slider = sliderInput("x", "X", 1, 100, 50),
              slider_input = sliderInput("bins", "Number of bins:", min = 1, max = 50, value = 30),
-             web_plot = plotOutput("distPlot")
+             web_plot = plotOutput("distPlot"),
+             plotly_plot = plotlyOutput("plott")
              
          
 )

@@ -22,5 +22,17 @@ shinyServer(function(input, output) {
     hist(x, breaks = bins, col = 'darkgray', border = 'white')
     
   })
+  output$plott <- renderPlotly({
+    # specify some map projection/options
+    g <- list(
+      scope = 'usa',
+      projection = list(type = 'albers usa'),
+      lakecolor = toRGB('white')
+    )
+    plot_ly(z = state.area, text = state.name, locations = state.abb,
+            type = 'choropleth', locationmode = 'USA-states') %>%
+      layout(geo = g)
+  })
+  
   
 })
