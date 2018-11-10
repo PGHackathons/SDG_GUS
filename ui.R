@@ -14,7 +14,7 @@ htmlTemplate("index.html",
              # Electricity plot and buttons
              el_plot = plotOutput("elPlot"),
              el_button.Poland = actionButton("el_poland", "Poland"),
-             el_button.Brazil = actionButton("el_brazil", "Brazil"),
+             el_button.Mali = actionButton("el_mali", "Mali"),
              el_button.Afghanistan = actionButton("el_afghanistan", "Afghanistan"),
              
              hom_plot = plotOutput("homPlot"),

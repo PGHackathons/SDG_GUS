@@ -31,9 +31,9 @@ shinyServer(function(input, output) {
     rv.el_data$y = el_data[el_data$GeoAreaName == 'Poland',]$Value
     rv.el_data$x = el_data[el_data$GeoAreaName == 'Poland',]$TimePeriod
   })
-  observeEvent(input$el_brazil, {
-    rv.el_data$y = el_data[el_data$GeoAreaName == 'Brazil',]$Value
-    rv.el_data$x = el_data[el_data$GeoAreaName == 'Brazil',]$TimePeriod
+  observeEvent(input$el_mali, {
+    rv.el_data$y = el_data[el_data$GeoAreaName == 'Mali',]$Value
+    rv.el_data$x = el_data[el_data$GeoAreaName == 'Mali',]$TimePeriod
   })
   observeEvent(input$el_afghanistan, {
     rv.el_data$y = el_data[el_data$GeoAreaName == 'Afghanistan',]$Value
