@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,6 +29,11 @@
     <script src="shared/ionrangeslider/js/ion.rangeSlider.min.js"></script>
     <script src="shared/strftime/strftime-min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+  <script src="htmlwidgets-1.0/htmlwidgets.js"></script>
+  <script src="plotly-binding-4.7.1/plotly.js"></script>
+  
+    
 <script>
 $(document).ready(function(){
   // Add smooth scrolling to all links
@@ -69,19 +75,27 @@ $(document).ready(function(){
         </div>
       </div>
 
-      <div id="div_id" class="item active" style="background-color: rgb(247, 247, 239); height: 100vh; background-size: cover;">
-        ..2
-        {{ button }}
-        {{ slider }}
-        <center>
-        <span syle="margin-top:70%;" class="glyphicon glyphicon-chevron-down"></span>
-        </center>
+       <div id="div_id" class="item active" style="background-color: rgb(247, 247, 239); height: 100vh; background-size: cover;">
+         <br /><br />
+         <div class="container">
+        <h1 style="background-color:#004b53; padding:5px; display:inline; color:white;">#Country 1</h1><br /><br/>
+         <div class="row">
+           <div class="col-sm-8">
+          <img src="minard_carte_figurative.jpg" style="width:100%;">
+          </div>
+          <div class="col-sm-4">
+          txt tx txt txt
+          </div>
+        </div>
+ </div>
       </div>
 
       <div class="item active" style="background-color: rgb(247, 247, 239); height: 100vh; background-size: cover;">
         ..3
         {{ slider_input  }}
         {{ web_plot }}
+       
+        
       </div>
     </div>
   </div>
