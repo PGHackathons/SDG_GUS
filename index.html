@@ -69,8 +69,9 @@ $(document).ready(function(){
       <div class="item active" style="background-image: url(earth-space.jpg); height: 100vh; background-size: cover;">
         <div class="container" style="padding-top:45vh;">
         <center>
-        <h1>WELCOME TO MY STORY</h1><br />
-        <a href="#first_div"><button type="button" class="btn btn-primary">Let's start</button></a>
+        <h1>WITAM W MOJEJ OPOWIEŚCI</h1><br />
+        <h3>WYRUSZYMY W PODRÓŻ DOOKOŁA ŚWIATA</h3><br />
+        <a href="#first_div"><button type="button" class="btn btn-primary btn-lg">Zaczynajmy</button></a>
         </center>
         </div>
       </div>
@@ -79,7 +80,7 @@ $(document).ready(function(){
         <div class="container"><br /><br />
         <center>
           <img src="benin.png" width="90%"><br />
-          <a href="#second_div"><button type="button" class="btn btn-primary">To Mexico!</button></a>
+          <a href="#second_div"><button type="button" class="btn btn-primary">Do Meksyku!</button></a>
         </center>
         </div>
       </div>
@@ -88,38 +89,40 @@ $(document).ready(function(){
          <div class="container"><br /><br />
          <center>
          <img src="mexico.png" width="90%"><br />
-          <a href="#third_div"><button type="button" class="btn btn-primary">See world statistics</button></a>
+          <a href="#third_div"><button type="button" class="btn btn-primary">Zaobacz dane w innych krajach</button></a>
         </center>
         </div>
  </div>
   <div id="third_div" class="item active" style="background-color: rgb(247, 247, 239); height: 100vh; background-size: cover;">
          <div class="container"><br /><br />
          <center>
-         {{ hom_plot }}
+           <h1>Liczba morderstw w poszczególnych kracjach</h1><br />
+         {{ hom_plot }}<br />
         {{ hom_button.Poland }}
         {{ hom_button.Germany }}
         {{ hom_button.Afghanistan }}<br /><br />
-          <a href="#thourght_div"><button type="button" class="btn btn-primary">To Emirates!</button></a>
+          <a href="#thourght_div"><button type="button" class="btn btn-primary">Do Zjednoczonych Emiratów Arabskich!</button></a>
          </center>
         </div>
  </div>
       <div id="thourght_div" class="item active" style="background-color: rgb(247, 247, 239); height: 100vh; background-size: cover;">
          <div class="container"><br /><br />
          <center>
-         <img src="emirates.png" width="90%"><br />
+         <img src="emirates.png" width="90%"><br /><br />
+          <a href="#electricity_div"><button type="button" class="btn btn-primary">Zobaczmy jak sytuacja wygląda z prądem</button></a>
         </center>
         </div>
  </div>
 
-      <div class="item active" style="background-color: rgb(247, 247, 239); height: 100vh; background-size: cover;">
+      <div id="electricity_div" class="item active" style="background-color: rgb(247, 247, 239); height: 100vh; background-size: cover;">
         <div class="container">
-          <h1>Proportion of population with access to electricity</h1>
           <center>
+          <h1>Odsetek ludności z dostępem do energii elektrycznej w poszczególnych krajach</h1>
         {{ el_plot }}
         {{ el_button.Afghanistan }}
         {{ el_button.Mali }}
         {{ el_button.Poland }}
-        <br />
+        <br /><br />
         <a href="#prefinal_div"><button type="button" class="btn btn-primary">NAST</button></a>
         </center>
         </div>

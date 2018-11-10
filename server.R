@@ -27,8 +27,8 @@ shinyServer(function(input, output) {
    
   # Electricity reactive values and button reactions
   rv.el_data <- reactiveValues(
-    y = el_data[el_data$GeoAreaName == 'Poland',]$Value,
-    x = el_data[el_data$GeoAreaName == 'Poland',]$TimePeriod
+    y = el_data[el_data$GeoAreaName == 'Afghanistan',]$Value,
+    x = el_data[el_data$GeoAreaName == 'Afghanistan',]$TimePeriod
   )
   observeEvent(input$el_poland, {
     rv.el_data$y = el_data[el_data$GeoAreaName == 'Poland',]$Value
