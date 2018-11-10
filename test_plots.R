@@ -43,6 +43,33 @@ library(ggmap)
 install.packages("maptools")
 library(maptools)
 library(maps)
-visited<-c("Poland", "London", "Senegal")
-ll.visited<-geocode(visited)
-install.packages("googleway")
+
+zz <-"ISO3V10   Country No.of.Documents Lat  Lon
+ARG Argentina   41  -64 -34
+AUS Australia   224 133 -27
+CAN Canada  426 -95 60
+IRL Ireland 68  -8  53
+ITA Italy   583 12.8333 42.8333
+NLD Netherlands 327 5.75    52.5
+NZL 'New Zealand' 26  174 -41
+ESP Spain   325 -4  40
+GBR 'United Kingdom'  2849    -2  54
+USA 'United States'   3162    -97 38
+"
+
+dF2 <- read.table(textConnection(zz), header = TRUE)
+mdat <- map_data('world')
+
+str(mdat)
+ggplot() + 
+  geom_polygon(dat=mdat, aes(long, lat, group=group), fill="grey50") +
+  geom_point(data=dat, 
+             aes(x=Lat, y=Lon, map_id=Country, size=`No.of.Documents`), col="red")
+mapBubbles(dF=dF2, nameZSize="No.of.Documents",
+           nameZColour="Country",oceanCol="lightblue", landCol="wheat",
+           addLegend=FALSE, nameX = "longitude", nameY = "latitude",addColourLegend = FALSE)
+install.packages("rworldmap")
+library(rworldmap)
+attach(homicideXpoverty)
+ggplot(homicideXpoverty, aes(x=poverty, y=homicide, size=3)) +
+  geom_point(alpha=0.2)
