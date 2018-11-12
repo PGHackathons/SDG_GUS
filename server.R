@@ -16,6 +16,7 @@ map.world <- map_data(map="world")
 #Add the data you want to map countries by to map.world
 #In this example, I add lengths of country names plus some offset
 map.world$name_len <- nchar(map.world$subregion) + sample(nrow(map.world))
+#X16_1_1<-read.csv("~/SDG_GUS/data/16.1.1.csv")
 fff<-subset(X16_1_1,X16_1_1$SeriesCode!="VC_IHR_PSRC")
 fff<-subset(fff,fff$TimePeriod==2015)
 a<-data.frame(fff$GeoAreaName,fff$Value)
@@ -77,7 +78,7 @@ shinyServer(function(input, output) {
     temp <- data.frame(x = rv.hom_data$x, y = rv.hom_data$y)
     ggplot(data=temp, aes(x=x, y=y, group=1)) +
       geom_line()+
-      geom_point()
+      geom_point()+ theme(plot.background = element_rect(fill="#F7F7EF"))
   })
   output$worldMap<-renderPlot({
     gg <- ggplot()
@@ -87,6 +88,7 @@ shinyServer(function(input, output) {
     gg<- gg + borders("world",colour = "grey",fill=NA)
     gg <- gg + scale_fill_gradient(low = "green", high = "brown3", guide = "colourbar")
     gg <- gg + coord_equal()
+    gg <- gg+ theme(plot.background = element_rect(fill="#F7F7EF"))
     
     gg
   })
